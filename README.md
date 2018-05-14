@@ -1,62 +1,39 @@
-# D-Zone
-An _ambient life simulation_ driven by the user activity within a [Discord](https://discordapp.com) server
+<div align="center">
+  <p>
+    <h1>RibbonZone</h3>
+      <a href="http://ribbonzone.club"><img src="http://i.imgur.com/PLh059j.gif" alt="Hippity hop!" title="RibbonZone" /></a>
+      <h3>An <i>ambient life simulation</i> driven by the user activity within a <a href="">Discord</a> server<br/>
+        <small>based on <a href="https://github.com/vegeta897">vegeta897's</a> <a href="https://github.com/vegeta897/d-zone">D-Zone</a> with updates to code styling and personal customization</small>
+      </h3>
+  </p>
 
-[![D-Zone](http://i.imgur.com/PLh059j.gif "Hippity hop!")](http://pixelatomy.com/dzone/)
+  <p>
+    <a href="https://github.com/Favna/ribbonzone-server/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/favna/ribbon.svg?style=for-the-badge" alt="License"></a><!-- 
+     --><a href="https://twitter.com/Favna_"><img src="https://img.shields.io/twitter/follow/espadrine.svg?style=for-the-badge&label=Follow" alt="Twitter Follow"></a>
+  </p>
 
-## Concept
-**D-Zone** is a graphical simulation meant to abstractly represent the activity in your Discord server.
+  <p>
+    <a href="https://discord.gg/zdt5yQt"><img src="https://canary.discordapp.com/api/guilds/246821351585742851/widget.png?style=banner2" alt="Join Discord Server"/></a>
+  </p>
+</div>
 
-This is not meant for any actual monitoring or diagnostics, only an experiment in the abstraction of chatroom data represented via autonomous characters in a scene.
+## Special Thanks
 
-Hopefully the simulation is interesting to watch. You can see the current (uninteresting) client version simulating the [discord.io server](https://discord.gg/0MvHMfHcTKVVmIGP) here: [pixelatomy.com/dzone](http://pixelatomy.com/dzone/)
+- vegeta897 for the original code of D-Zone
 
-## Installation
+- AcedArmy / Biscuit for helping this total noob with hosting issues
 
-If you're an absolute beginner and have never used Node, I have written a more [beginner-friendly guide](https://github.com/vegeta897/d-zone/wiki/Beginner's-Setup-Guide)
+- All the creators of the node packages used in this project
 
-This project is still **very early in development**, so there isn't much point in running it yet. But in case you're curious, here's what you need to do:
+## Buy me a donut
 
-```
-git clone https://github.com/vegeta897/d-zone.git
-cd d-zone
-npm install --no-optional
-```
+This bot is open source and always will be, even if I don't get donations. That said, I know there are people out there that may still want to donate just to show their appreciation so this is for you guys. Thanks in advance!
 
-Contained in the package are the server files and client files.
+I accept donations through PayPal, BitCoin, Ethereum and LiteCoin. You can use the buttons below to donate through your method of choice
 
-Rename `discord-config-example.json` to `discord-config.json` and insert the login and server info for your Discord server(s). **You must specify _one_ `default` Discord server.** You can include multiple servers here, and as long as your bot can connect to them, they will be available for clients to view. You can password-protect a server from being viewed by a client by using the `password` property. Check the [Configuration](https://github.com/vegeta897/d-zone/wiki/Configuration) reference for more info.
-
-You can automatically populate your `discord-config.json` with all your bot's servers by running `Update Configuration.bat`. Your token must be present in `discord-config.json`.
-
-Rename `socket-config-example.json` to `socket-config.json` and insert the IP and port you want to run the websocket on.
-
-Start the server with `npm start` or just `node index.js`
-
-The client files are all contained within the `web` folder, and need to be built into `/static/bundle.js`  with `npm run-script build` or `npm run-script watch`. Upload everything in the `web` folder except the `script` folder. _Do not_ remove the web folder from the package; the server component requires it.
-
-**Important:** D-Zone currently does not support `https`, so your host/subdomain *must not have SSL enabled*. If you are savvy with websockets over SSL, please consider submitting a pull request to add support! Regardless, this will be supported in the rewrite in progress, but I have no ETA.
-
-If everything works, the client should connect to the default server, generate a world, and receive live updates via websocket from the server.
-
-You can tweak the message box parameters by editing `misc-config.json`. Check the [Misc Config](https://github.com/vegeta897/d-zone/wiki/Configuration#misc) reference for details.
-
-Remember, this project is still being developed, so check back here for updates!
-
-Don't forget to rebuild `bundle.js` and re-upload the web files after updating!
-
-## Design
-The game engine architecture is currently loosely based on [crtrdg](http://crtrdg.com/).
-
-It consists of both a server and client component:
-
-### Server Component
-The server runs a [Discord bot](https://www.npmjs.com/package/discord.io) which monitors the activity and user statuses in the server(s) of your choice. This data is sent to clients in real time via websockets.
-
-### Client Component
-The client (also designed with node via browserify) runs a graphical simulation in a canvas depicting an isometric scene populated by objects and autonomous characters. The activity in the scene is dictated and influenced by the data received from the server component. Clients are able to change which Discord server they are viewing with in-game UI.
-
-Core client modules such as the renderer and input controller are loosely based on implementations found in [playground.js](http://playgroundjs.com/).
-
-_Disclaimer: I cannot be held responsible for anything that happens to your computer, your server, your bot, or anything else as a result of using this package._
-
-_Please consider the privacy of the users on your server. D-Zone will allow anyone with the URL (and password, if used) to monitor the chat of anyone in any channel that your bot has permission to see._
+|Donate With|QR|Address|
+|:---:|:---:|:---:|
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C8VGUHM3SWY7U"><img src="https://favna.xyz/images/ribbonhost/paypaldonate.png"></a>|<img src="https://favna.xyz/images/ribbonhost/paypalqr.png" width="128">|[Donate with PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=C8VGUHM3SWY7U)|
+<img src="https://favna.xyz/images/ribbonhost/bitcoindonate.png">|<img src="https://favna.xyz/images/ribbonhost/bitcoinqr.png" width="128">|<a href="bitcoin:1E643TNif2MTh75rugepmXuq35Tck4TnE5?amount=0.01&label=Favna%27%20Ribbon%20Discord%20Bot">1E643TNif2MTh75rugepmXuq35Tck4TnE5</a>|
+<img src="https://favna.xyz/images/ribbonhost/ethereumdonate.png">|<img src="https://favna.xyz/images/ribbonhost/ethereumqr.png" width="128">|<a href="ethereum:0xF653F666903cd8739030D2721bF01095896F5D6E?amount=0.01&label=Favna%27%20Ribbon%20Discord%20Bot">0xF653F666903cd8739030D2721bF01095896F5D6E</a>|
+<img src="https://favna.xyz/images/ribbonhost/litecoindonate.png">|<img src="https://favna.xyz/images/ribbonhost/litecoinqr.png" width="128">|<a href="litecoin:LZHvBkaJqKJRa8N7Dyu41Jd1PDBAofCik6?amount=0.01&label=Favna%27%20Ribbon%20Discord%20Bot">LZHvBkaJqKJRa8N7Dyu41Jd1PDBAofCik6</a>|
