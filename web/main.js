@@ -1,10 +1,6 @@
 /* eslint-disable no-undef, no-use-before-define, no-unused-vars, sort-vars */
 
-const path = require('path');
-
-require('dotenv').config({path: path.join(__dirname, '.env')});
-
-var Canvas = require('./script/engine/canvas.js'), // eslint-disable-line one-var, no-var, vars-on-top
+const Canvas = require('./script/engine/canvas.js'), // eslint-disable-line one-var, no-var, vars-on-top
   Decorator = require('./script/props/decorator.js'),
   Game = require('./script/engine/game.js'),
   Preloader = require('./script/engine/preloader.js'),
@@ -17,7 +13,6 @@ var Canvas = require('./script/engine/canvas.js'), // eslint-disable-line one-va
   webSocket = require('websocket-stream');
 
 const packageInfo = JSON.parse(require('fs').readFileSync('./package.json')), // eslint-disable-line one-var
-  socketInfo = JSON.parse(require('fs').readFileSync(path.join(__dirname, 'conf.json'))),
   {version} = packageInfo,
   preloader = new Preloader(initGame);
 
@@ -57,9 +52,9 @@ function initWebsocket () {
     users = null,
     world = null;
 
-  console.log('Initializing websocket on port', socketInfo.port);
+  console.log('Initializing websocket on port', '2356');
 
-  ws = webSocket(`ws://${socketInfo.ip}:${socketInfo.port}`);
+  ws = webSocket(`ws://${'188.166.74.110'}:${'2356'}`);
 
   ws.on('data', (data) => {
     data = JSON.parse(data);
