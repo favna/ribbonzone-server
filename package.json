@@ -15,7 +15,8 @@
   },
   "scripts": {
     "build": "browserify web/main.js -t brfs -g uglifyify -o web/static/bundle.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "start:client": "node web/server.js"
   },
   "keywords": [
     "bot",
