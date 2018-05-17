@@ -7,7 +7,6 @@ conf.json
 
 # Any logs created
 *.log
-bot.json
 
 # Browserify
 web/static/bundle.js

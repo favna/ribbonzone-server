@@ -2,8 +2,6 @@
 
 const Discord = require('discord.io'),
   inherits = require('inherits'),
-  jsonfile = require('jsonfile'),
-  path = require('path'),
   util = require('./../web/script/common/util'),
   {EventEmitter} = require('events');
 
@@ -58,7 +56,6 @@ function Inbox (config) {
     }
     console.log('Connected to', Object.keys(self.servers).length - 1, 'server(s)');
     self.emit('connected');
-    jsonfile.writeFileSync(path.join(__dirname, 'data/bot.json'), bot);
 
     bot.on('message', (user, userID, channelID, message) => {
       if (userID === bot.id) {
